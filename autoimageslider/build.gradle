@@ -4,33 +4,7 @@ plugins {
 }
 
 group = 'com.koai-dev'
-version = '1.4.0'
-
-//ext {
-//
-//    bintrayRepo = 'android'
-//    bintrayName = 'androidautoimageslider'
-//
-//    publishedGroupId = 'com.github.smarteist'
-//    libraryName = 'autoimageslider'
-//    artifact = 'autoimageslider'
-//
-//    libraryDescription = 'Simple, android image slider'
-//
-//    siteUrl = 'https://github.com/smarteist'
-//    gitUrl = 'https://github.com/smarteist/android-image-slider.git'
-//
-//    libraryVersion = '1.4.0'
-//    organization = 'smarteistbintray' // if you push to organization's repository.
-//    developerId = 'smarteist'
-//    developerName = 'Ali Hosseini'
-//    developerEmail = 'ali.hosseini.sr@gmail.com'
-//
-//    licenseName = 'The Apache Software License, Version 2.0'
-//    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-//    allLicenses = ["Apache-2.0"]
-//
-//}
+version = '1.4.1'
 
 android {
     namespace "com.smarteist.autoimageslider"
@@ -52,8 +26,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
 
     buildFeatures {
@@ -101,7 +75,7 @@ afterEvaluate {
             release(MavenPublication) {
                 groupId = 'com.koai-dev'
                 artifactId = 'autoimageslider'
-                version = '1.4.0'
+                version = '1.4.1'
 
                 afterEvaluate {
                     from components.release
@@ -113,7 +87,7 @@ afterEvaluate {
 
 task createReleaseTag {
     doLast {
-        def tagName = "1.0.2"
+        def tagName = "1.4.1"
         try {
             exec {
                 commandLine("git", "tag", "-a", tagName, "-m", "Release tag $tagName")
