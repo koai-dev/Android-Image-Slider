@@ -1,5 +1,6 @@
 # use this for replace died version:
 maven { url 'https://jitpack.io' }
+
 implementation 'com.github.koai-dev:Android-Image-Slider:1.4.0'
 
 
